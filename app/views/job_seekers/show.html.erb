@@ -1,0 +1,23 @@
+<p><%= notice %></p>
+
+<section class="about_section layout_padding">
+  <div class="container">
+    <div class="detail-box">
+      <div class="heading_container heading_center">
+<h2> Job Seeker Details</h2>
+
+<%= render @job_seeker %>
+
+
+<% unless session[:admin].nil? %>
+<div>
+  <%= link_to "Edit this job seeker", edit_job_seeker_path(@job_seeker) %> |
+  <%= link_to "Back to job seekers", job_seekers_path %>
+
+  <%= button_to "Destroy this job seeker", @job_seeker, method: :delete %>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>

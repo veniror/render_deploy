@@ -1,0 +1,45 @@
+<%= flash[:notice] %>
+
+<!-- slider section -->
+<section class="slider_section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h1>
+Weclome Admin!          </h1>
+       
+</h1></font>
+        </div>
+        <div class="find_container ">
+        <h1>Admin Login</h1>
+<%= form_with url: "/admin/login", method: :post do |form| %>
+  
+    <div class="form-group col-lg-6">
+     
+      <%= form.text_field :username,:class=>"form-control",:placeholder=>"User Name" %>
+    </div>
+  
+    <div class="form-group col-lg-6">
+      
+      <%= form.password_field :password,:class=>"form-control",:placeholder=>"Password" %>
+    </div>
+  
+    <div class="form-group col-lg-6">
+      <%= form.submit "Login",:class=>"btn btn-outline-dark" %>
+    </div>
+  
+<% end %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="/assets/slider-img.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end slider section -->
+
+

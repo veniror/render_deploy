@@ -1,0 +1,37 @@
+
+
+
+
+<!-- slider section -->
+<section class="slider_section ">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h1>
+            "Where opportunities meet talent — Your next career begins here."
+          </h1>
+          <font color="black">
+<h1>
+Enroll Now!          
+</h1></font>
+        </div>
+        <div class="find_container ">
+        <%= render "form", job_seeker: @job_seeker %>
+
+        <br>
+        
+        <div>
+          <%= link_to "Back to job seekers", job_seekers_path %>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="/assets/slider-img.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end slider section -->

@@ -1,0 +1,66 @@
+<p><%= notice %></p>
+
+<% content_for :title, "Job Seekers" %>
+
+<h1 align="center">Job Seekers</h1>
+
+<div class="container">
+  <div class="row">
+    <% @job_seekers.each_with_index do |job_seeker, index| %>
+      <!-- Every 4 job seekers, start a new row -->
+      <% if index % 4 == 0 && index != 0 %>
+        </div><div class="row">
+      <% end %>
+      
+      <div class="col-md-3 mb-4">
+        <div id="<%= dom_id(job_seeker) %>" class="card">
+          <div class="card-body">
+            <p>
+              <% if job_seeker.profile_image.attached? %>
+                <%= image_tag job_seeker.profile_image, height: "200", width: "75", class: "card-img-top" %>
+              <% else %>
+                <%= image_tag "default-avatar.png", height: "200", width: "75", class: "card-img-top" %> <!-- Fallback image -->
+              <% end %>
+            </p>
+
+            <p>
+              <strong>Full name:</strong>
+              <%= job_seeker.full_name %>
+            </p>
+
+            <p>
+              <strong>Email:</strong>
+              <%= job_seeker.email %>
+            </p>
+
+            <p>
+              <strong>Date of birth:</strong>
+              <%= job_seeker.date_of_birth %>
+            </p>
+
+            <p>
+              <strong>Mobile:</strong>
+              <%= job_seeker.mobile %>
+            </p>
+
+            <p>
+              <strong>Address:</strong>
+              <%= job_seeker.address %>
+            </p>
+
+            <p>
+              <%= link_to "Show this job seeker", job_seeker, class: "btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
+
+
+<div class="form-group col-lg-6">
+<%= link_to "New job seeker", new_job_seeker_path, class: "btn btn-outline-dark" %>
+
+    </div>
